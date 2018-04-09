@@ -1,0 +1,20 @@
+• For a test project implementation you must use Laravel or Lumen.
+• You can use any system (even NoSql) as a database.
+• You can use any available js frameworks or libraries at the front, they should be installed into the project through npm or bower. All js modules must be in one file with the minification by webpack or gulp.
+• You can use Bootstrap styles.
+• You must attach the install.md file with the installation and deployment instructions to the project.
+• Use git as the version control system, put the result into the public repository on GitHub or Bitbucket and drop the link to the project.
+• The CoinDesk Bitcoin API documentation is available at https://www.coindesk.com/api/
+• The Blockchain Exchange Rates API documentation at https://blockchain.info/api/exchange_rates_api
+• The Laravel task scheduling Documentation at https://laravel.com/docs/5.4/scheduling
+ 
+ 
+ 
+The task consists of two main parts:
+ 
+1. Create an artisan command for extraction of data on the exchange rate of Bitcoin cryptocurrency. You have to get the cost of one BTC in the currency USD, GBP and EUR.
+In order to get the current course, use https://api.coindesk.com/v1/bpi/currentprice.json  or https://blockchain.info/ticker , the specific provider must be defined in the configuration file .env. The result of the work must be saved in a database with rounding of numbers to hundredths. Log the time of each launch, the name of the provider and the time spent executing the artisan command in Laravel log.
+Configure the run of the command every minute using Laravel task scheduling, without creating a configuration for cron.
+ 
+2. Create the page:
+On the page should be a table with columns Time, USD, EUR, GBP. The pagination by the table must be possible. 
